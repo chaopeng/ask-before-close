@@ -1,0 +1,29 @@
+{
+  "name": "Ask Before Close",
+  "description": "Ask Before Close inject a script to block on close tab",
+  "version": "0.1.0",
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "32": "icons/disable/32.png",
+      "48": "icons/disable/48.png",
+      "64": "icons/disable/64.png",
+      "96": "icons/disable/96.png",
+      "128": "icons/disable/128.png"
+    }
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "manifest_version": 2
+}
